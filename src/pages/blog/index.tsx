@@ -10,6 +10,7 @@ export default class BlogPage extends Vue {
   protected fetch() {
     BlogStore.fetchBlog()
   }
+
   protected render() {
     return (
       <section>

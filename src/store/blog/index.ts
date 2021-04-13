@@ -7,6 +7,7 @@ import {
 } from 'nuxt-property-decorator'
 import { store } from '@/store'
 import { IBlogState } from './types'
+import { BlogAPI } from '~/services/api/modules/Blog'
 
 @Module({
   dynamic: true,
@@ -26,6 +27,7 @@ class Blog extends VuexModule implements IBlogState {
   @VuexAction({ rawError: true })
   fetchBlog() {
     this.ADD_BLOG('ok fetch')
+    BlogAPI.get()
   }
 }
 
